@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+
+
+    /**
+     * permet que si on est pas connecte et admin que les function en dessous ne marche pas 
+     */
+public function __construct()
+{
+    $this->middleware('auth');
+}
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +27,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return "listes des utilisateurs.";
+        $users=User::all();
+        return  view('admin.users.index')->with('users',$users);
     }
 
     /**

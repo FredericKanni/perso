@@ -65,7 +65,8 @@
                                         @csrf
                                     </form>
 
-                                <a href="{{route('users.index')}}" class="dropdown-item">liste des utilisateurs</a>
+                             {{-- <a href="{{route('users.index')}}" class="dropdown-item">liste des utilisateurs</a> --}}
+                                <a href="{{route('admin.users.index')}}" class="dropdown-item">liste des utilisateurs</a>
                                 </div>
                             </li>
                         @endguest
